@@ -1,8 +1,15 @@
 import React from "react";
+import { connect } from "react-redux";
 import "./Screen.css";
 
-const Screen = () => {
-  return <div className="Screen">0</div>;
+const Screen = ({ currentVal }) => {
+  return <div className="Screen">{currentVal}</div>;
 };
 
-export default Screen;
+const mapStateToProps = state => {
+  return {
+    currentVal: state.currentVal
+  };
+};
+
+export default connect(mapStateToProps)(Screen);

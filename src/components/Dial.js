@@ -1,30 +1,32 @@
 import React from "react";
+import { connect } from "react-redux";
+import { setCurrentVal } from "../actions";
 import "./Dial.css";
 
-const Dial = () => {
+const Dial = ({ dispatch }) => {
   return (
     <section className="Dial">
       <div className="digits">
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>0</button>
-        <button>.</button>
+        <button onClick={() => dispatch(setCurrentVal("1"))}>1</button>
+        <button onClick={() => dispatch(setCurrentVal("2"))}>2</button>
+        <button onClick={() => dispatch(setCurrentVal("3"))}>3</button>
+        <button onClick={() => dispatch(setCurrentVal("4"))}>4</button>
+        <button onClick={() => dispatch(setCurrentVal("5"))}>5</button>
+        <button onClick={() => dispatch(setCurrentVal("6"))}>6</button>
+        <button onClick={() => dispatch(setCurrentVal("7"))}>7</button>
+        <button onClick={() => dispatch(setCurrentVal("8"))}>8</button>
+        <button onClick={() => dispatch(setCurrentVal("9"))}>9</button>
+        <button onClick={() => dispatch(setCurrentVal("0"))}>0</button>
+        <button onClick={() => dispatch(setCurrentVal("."))}>.</button>
       </div>
       <div className="operators">
-        <button>&divide;</button>
-        <button>&times;</button>
-        <button>-</button>
-        <button>+</button>
+        <button onClick={() => dispatch(setCurrentVal("/"))}>&divide;</button>
+        <button onClick={() => dispatch(setCurrentVal("*"))}>&times;</button>
+        <button onClick={() => dispatch(setCurrentVal("-"))}>-</button>
+        <button onClick={() => dispatch(setCurrentVal("+"))}>+</button>
       </div>
     </section>
   );
 };
 
-export default Dial;
+export default connect()(Dial);
