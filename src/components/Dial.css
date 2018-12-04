@@ -1,0 +1,13 @@
+.Dial {
+  display: flex;
+  flex-direction: row;
+  width: 240px;
+}
+
+.digits {
+  width: 180px;
+}
+
+.operators {
+  width: 60px;
+}

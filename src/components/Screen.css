@@ -1,0 +1,9 @@
+.Screen {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 30px;
+  background-color: white;
+  border: 4px solid #eee;
+  padding: 4px;
+}
