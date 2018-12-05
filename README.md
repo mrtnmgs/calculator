@@ -1,44 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Babbel Coding Challenge: Calculator
 
-## Available Scripts
+## Instructions
 
-In the project directory, you can run:
+This coding challenge requires you to create a calculator using React and Redux and test its code using Jest. You should not spend more than 1-2 hours on this challenge; if there are any parts that you do not finish, please provide a high-level description of your intentions for the unimplemented portions of the application.
 
-### `npm start`
+Intended features:
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Create a from-scratch calculator app in a new GitHub repository
+- Use React for the front-end
+  You can make it look however you want.
+  Minimum functionality will include addition, subtraction, multiplication, division, equals, and memory storage (MS) & retrieval (MR)
+- Manage the application state and its transitions with Redux
+- Write unit tests to assert intended behavior using Jest
+- Upon completion, give us access to the GitHub repository so we can clone it; doing so is probably easiest if you make the repo public. Ultimatelywe should be able to clone your repo locally then run npm start to use the app or npm test to run the unit tests.
+- Nice-to-have: browser compatibility with latest Chrome, Firefox, and IE11
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Feel free to add any additional features as long as you make it clear that you're doing so. We're looking forward to seeing what you come up with. Good luck!
 
-### `npm test`
+## Notes
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- I built the app with create-react-app
+- I used browserslist (included in CRA) to support IE11. (IE11 supports CSS grid with the -ms- prefix which is added by Autoprefixer)
+- I added a "C" button to clear the screen (keeps the value stored in Memory)
+- Because of the time constraint I did not separate the components between presentational and container components (the "presentational" components are connected to the store)
+- Naming could be improved
 
-### `npm run build`
+## Known bugs
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- There is nothing at the moment preventing the user to create an expression with several consecutive operators (e.g. "12+-\*54"). The execution will cause an error.
+- Numbers can overflow out of the screen
+- MS doesn't clear the screen, and MR adds to the current screen value (I wasn't sure of the expected behavior there)
