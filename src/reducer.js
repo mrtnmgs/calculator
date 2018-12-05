@@ -11,8 +11,11 @@ const setCurrentValue = (state, action) => {
 };
 
 const calculate = state => {
+  if (!state.currentVal) {
+    return state;
+  }
   return Object.assign({}, state, {
-    currentVal: eval(state.currentVal)
+    currentVal: eval(state.currentVal).toString()
   });
 };
 
@@ -25,8 +28,15 @@ const setMemory = state => {
 
 const getMemory = state => {
   // TODO: only numbers can be committed to memory
+  if (!state.memoryVal) {
+    return state;
+  }
+
+  const value = state.currentVal
+    ? state.currentVal + state.memoryVal
+    : state.memoryVal;
   return Object.assign({}, state, {
-    currentVal: state.currentVal + state.memoryVal
+    currentVal: value
   });
 };
 
