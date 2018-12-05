@@ -12,9 +12,15 @@ export const setMemoryVal = value => {
   };
 };
 
-export const calculate = () => {
+export const getMemoryVal = value => {
   return {
-    type: "CALCULATE"
+    type: "GET_MEMORYVAL"
+  };
+};
+
+export const getResult = () => {
+  return {
+    type: "GET_RESULT"
   };
 };
 
