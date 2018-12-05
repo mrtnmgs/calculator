@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import App from "./App";
+import Memory from "./Memory";
 
 const reducer = (state = { currentVal: "29/3", memoryVal: "95.33" }, action) =>
   state;
@@ -13,7 +13,7 @@ it("renders without crashing", () => {
   const div = document.createElement("div");
   ReactDOM.render(
     <Provider store={store}>
-      <App />
+      <Memory />
     </Provider>,
     div
   );
