@@ -7,8 +7,7 @@ export const setCurrentVal = value => {
 
 export const setMemoryVal = value => {
   return {
-    type: "SET_MEMORYVAL",
-    value
+    type: "SET_MEMORYVAL"
   };
 };
 
