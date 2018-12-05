@@ -1,12 +1,14 @@
 import React from "react";
-// import "./Result.css";
+import { connect } from "react-redux";
+import { getResult } from "../actions";
+import "./Result.css";
 
-const Result = () => {
+const Result = ({ dispatch }) => {
   return (
     <div className="Result">
-      <button>=</button>
+      <button onClick={() => dispatch(getResult())}>=</button>
     </div>
   );
 };
 
-export default Result;
+export default connect()(Result);
