@@ -1,14 +1,16 @@
 import React from "react";
+import { connect } from "react-redux";
+import { clear, setMemoryVal, getMemoryVal } from "../actions";
 import "./Memory.css";
 
-const Memory = () => {
+const Memory = ({ dispatch }) => {
   return (
     <div className="Memory">
-      <button>C</button>
-      <button>MS</button>
-      <button>MR</button>
+      <button onClick={() => dispatch(clear())}>C</button>
+      <button onClick={() => dispatch(setMemoryVal())}>MS</button>
+      <button onClick={() => dispatch(getMemoryVal())}>MR</button>
     </div>
   );
 };
 
-export default Memory;
+export default connect()(Memory);
