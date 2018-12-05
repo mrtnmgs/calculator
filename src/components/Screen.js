@@ -3,7 +3,10 @@ import { connect } from "react-redux";
 import "./Screen.css";
 
 const Screen = ({ currentVal }) => {
-  return <div className="Screen">{currentVal}</div>;
+  const regex = /[\d\.]+$/g;
+  let displayNumber = currentVal ? currentVal : 0;
+  displayNumber = displayNumber.toString().match(regex);
+  return <div className="Screen">{displayNumber}</div>;
 };
 
 const mapStateToProps = state => {
